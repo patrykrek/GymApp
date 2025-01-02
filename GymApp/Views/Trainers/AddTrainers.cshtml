@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "_AddLayout";
+}
+
+@model GymApp.DTO.AddTrainersDTO
+
+<div class="container">
+    <form asp-controller="Trainers" asp-action="AddTrainersForm">
+
+        <h1>Add New Trainer</h1>
+
+        <div class="input-box">
+
+            <p>First Name</p>
+
+            <input type="text" placeholder="First Name" asp-for="FirstName"></input>
+
+            <span class="text-danger" asp-validation-for="FirstName"></span>
+        </div>
+
+        <div class="input-box">
+
+            <p>Last Name</p>
+
+            <input type="text" placeholder="Last Name" asp-for="LastName"></input>
+
+            <span class="text-danger" asp-validation-for="LastName"></span>
+
+        </div>
+
+        <div class="input-box">
+
+            <p>BIO</p>
+
+            <input type="text" placeholder="BIO" asp-for="Bio"></input>
+
+            <span class="text-danger" asp-validation-for="Bio"></span>
+
+        </div>
+
+        <div class="input-box">
+            <p>Photo Path</p>
+
+            <input type="text" placeholder="PhotoPath" asp-for="PhotoPath"></input>
+
+            <span class="text-danger" asp-validation-for="PhotoPath"></span>
+        </div>
+
+        <div class="btn-submit">
+
+            <button class="btn-submit" type="submit">Add</button>
+
+        </div>
+       
+
+        <div class="back-link">
+
+            <a href="/Home/Index">Back</a>
+
+        </div>
+    </form>
+</div>

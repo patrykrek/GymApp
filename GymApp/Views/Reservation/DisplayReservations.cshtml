@@ -1,0 +1,57 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+@model List<GymApp.DTO.GetReservationsDTO>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Reservation Date
+                </th>
+                <th>
+                    Training Name
+                </th>
+                <th>
+                    Training Description
+                </th>
+                <th>
+                    Training Date
+                </th>
+                <th>
+                    User ID
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var reservation in Model)
+            {
+                <tr>
+                    <td data-lable="Reservation Date">
+                        @reservation.ReservationDate
+                    </td>
+                    <td data-lable="Training Name">
+                        @reservation.Training.Name
+                    </td>
+                    <td data-lable=" Training Description">
+                        @reservation.Training.Description
+                    </td>
+                    <td data-lable="Training Date">
+                        @reservation.Training.StartDate
+                    </td>
+                    <td data-lable="User ID">
+                        @reservation.userId
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+

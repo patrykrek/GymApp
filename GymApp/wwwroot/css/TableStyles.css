@@ -1,0 +1,133 @@
+﻿.table-container {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 100%;
+    max-width: 1000px;
+    overflow-x: auto;
+    display: block;
+}
+
+.table-container table {
+    width: 100%;
+    font-size: 20px;
+    height: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+  }    
+
+
+th {
+    font-weight: bold;
+    border: 2px solid black;
+    text-align: center;
+    color: white;
+    background-color: rgb(65, 86, 110);
+}
+
+td {
+    border: 2px solid black;
+    text-align: center;
+    color: rgb(236, 242, 191);
+    background-color: rgb(81, 117, 156);
+    padding: 5px;
+}
+
+.buttons-container{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    
+   
+}
+
+.buttons-container a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.btn-delete {
+    font-size: 15px;
+    font-weight: bold;
+    background-color: red;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.btn-edit {
+    font-size: 15px;
+    font-weight: bold;
+    background-color: aquamarine;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+.btn-sub {
+    font-size: 15px;
+    font-weight: bold;
+    background-color: rgb(61, 235, 52);
+    padding: 5px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-sub:hover{
+    background-color: rgb(89, 199, 84);
+}
+.btn-delete:hover{
+    background-color: lightcoral;
+}
+.btn-edit:hover{
+    background-color:lightblue;
+}
+
+@media(max-width: 550px){
+    thead{
+        display: none;
+    }
+
+    tr,td{
+        display: block;
+        border: 1px solid black;
+    }
+
+    tr{
+        margin-bottom: 1rem;
+    }
+
+    tbody tr td{
+        text-align: right;
+        position: relative;
+    }
+
+    .buttons-container{
+        display: flex;
+        justify-content: right;
+    }
+
+
+
+    td:before{
+        content: attr(data-lable);
+        position: absolute;
+        left: 5px;
+        width: 50%;
+        text-align: left;
+        color: white;
+        font-weight: bold;
+        
+    }
+}
+
+@media(max-width: 880px){
+    thead,tr,td{
+        font-size: 12px;
+    }
+}

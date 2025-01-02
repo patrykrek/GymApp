@@ -1,0 +1,76 @@
+﻿@{
+    Layout = "_AddLayout";
+}
+
+@model GymApp.DTO.UpdateTrainingsDTO
+
+<div class="container">
+    <form asp-controller="Trainings" asp-action="EditTrainingsForm">
+
+        <div class="input-box">
+            <input type="hidden" asp-for="Id"></input>
+        </div>
+        <h1>Edit Training</h1>
+
+        <div class="input-box">
+
+            <p>Name</p>
+
+            <input type="text" placeholder="Name" asp-for="Name"></input>
+
+            <span class="text-danger" asp-validation-for="Name"></span>
+
+        </div>
+
+        <div class="input-box">
+
+            <p>Description</p>
+
+            <input type="text" placeholder="Description" asp-for="Description"></input>
+
+            <span class="text-danger" asp-validation-for="Description"></span>
+        </div>
+
+        <div class="input-box">
+
+            <p>Date</p>
+
+            <input type="datetime-local" asp-for="StartDate"></input>
+
+            <span class="text-danger" asp-validation-for="StartDate"></span>
+
+        </div>
+        <div class="input-box">
+
+            <p>Duration(in minutes)</p>
+
+            <input type="number" placeholder="0" min="0" asp-for="Duration"></input>
+
+            <span class="text-danger" asp-validation-for="Duration"></span>
+
+        </div>
+        <div class="input-box">
+
+            <p>Trainer ID</p>
+
+            <input type="number" placeholder="0" min="0" asp-for="TrainerId"></input>
+
+            <span class="text-danger" asp-validation-for="TrainerId"></span>
+
+        </div>
+
+        <div class="btn-submit">
+
+            <button class="btn-submit" type="submit">Edit</button>
+
+        </div>
+
+
+        <div class="back-link">
+
+            <a href="/Home/Index">Back</a>
+
+        </div>
+
+    </form>
+</div>

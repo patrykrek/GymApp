@@ -1,0 +1,115 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    background-image: url(/images//tlogym.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+nav{
+    background-color: white;
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+   
+}
+
+nav ul{
+    list-style: none;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+nav li{
+    height: 50px;
+
+}
+
+nav a{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+nav a:hover{
+    background-color: rgb(242, 242, 242);
+}
+
+nav li:first-child{
+    margin-right: auto;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgba(252, 252, 252,0.2);
+    height: 100vh;
+    width: 250px;
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0,0,0,0.3);
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    
+}
+
+.sidebar li:hover{
+    width: 100%;
+}
+
+.sidebar a:hover{
+    width: 100%;
+}
+
+.menu-button{
+    display: none;
+}
+
+svg{ 
+    fill: black;
+}
+
+
+@media (max-width: 600px){
+    .sidebar{
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px){
+    .sidebar {
+        width: 100%;
+    }
+}
+
+@media (max-width: 800px) {
+    .guest-link {
+        display: none;
+    }
+}
+
+
+
+@media (max-width: 1110px){
+    .admin-link, .auth-link, .home-link, .user-link, .guest-link{
+        display: none;
+    }
+
+    .menu-button{
+        display: block;
+    }
+}

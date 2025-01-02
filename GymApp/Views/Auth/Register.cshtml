@@ -1,0 +1,43 @@
+﻿@{
+    Layout = "_RegisterLayout";
+}
+
+@model GymApp.Models.ViewModels.RegisterViewModel;
+
+<div class="container">
+    <form asp-controller="Auth" asp-action="Register" method="post">
+        <h1>Register</h1>
+        <div class="input-box">
+            <p>Email</p>
+
+            <input type="email" placeholder="Email" asp-for="Email"></input>
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </div>
+
+        <div class="input-box">
+            <p>Password</p>
+
+            <input type="password" placeholder="Password" asp-for="Password"></input>
+            <span class="text-danger" asp-validation-for="Password"></span>
+        </div>
+
+        <div class="input-box">
+            <p>Confirm Password</p>
+
+            <input type="password" placeholder="Confirm" asp-for="ConfirmPassword"></input>
+            <span class="text-danger" asp-validation-for="ConfirmPassword"></span>
+        </div>
+
+        <button class="btn" type="submit">Register</button>
+
+        <div class="have-account">
+            <p>Already have an account?
+                <a href="/Auth/Login">Login</a>
+            </p>
+        </div>
+
+        <div class="back-home">
+            <a href="/Home/Index">Back</a>
+        </div>
+    </form>
+</div>

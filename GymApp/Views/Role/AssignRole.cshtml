@@ -1,0 +1,36 @@
+﻿@{
+    Layout = "_AddLayout";
+}
+
+@model GymApp.Models.UserRole
+
+<div class="container">
+  <form asp-controller="Role" asp-action="AssignRoleForm">
+    <div class="input-box">
+        <p>User Email</p>
+
+        <input type="email" placeholder="User Email" asp-for="Email" ></input>
+
+        <span class="text-danger" asp-validation-for="Email"></span>
+    </div>
+
+    <div class="input-box">
+        <p>Role</p>
+
+        <input type="text" placeholder="Role" asp-for="Roles"></input>
+
+        <span class="text-danger" asp-validation-for="Roles"></span>
+    </div>
+
+    <div class="btn-submit">
+        <button type="submit">Assign</button>
+    </div>
+
+    <div class="back-link">
+        <a href="/Home/Index">Back</a>
+    </div>
+  </form>
+
+
+</div>
+

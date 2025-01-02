@@ -1,0 +1,89 @@
+﻿
+
+
+
+.buymembership-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+
+.membership-card {
+    background-color: rgb(66, 113, 214);
+    color: white;
+    height: 400px;
+    width: 90%;
+    max-width: 350px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 8px;
+    opacity: 0;
+    animation: fade-in 1s ease-in forwards;
+    transform: translateY(20px);
+    margin: 10px;
+    
+}
+
+.membership-card:hover{
+    background-color: rgb(209, 136, 67);
+}
+
+h1{
+    text-align: center;
+    padding: 10px;
+}
+
+#header{
+    color: white;
+}
+
+p{
+    text-align: center;
+    padding: 5px;
+}
+
+.benefits{
+    position: absolute;
+    background-color: black;
+    left: 5px;
+    bottom: 5px;
+    right: 5px;
+    height: 200px;       
+}
+
+.benefits ul{
+    padding: 25px;
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+
+}
+
+.buy-link{
+    text-decoration: none;
+}
+
+@keyframes fade-in{
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 720px){
+    .buymembership-view{
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .membership-card{
+        max-width: none;
+        width: 100%;
+    }
+
+    
+}

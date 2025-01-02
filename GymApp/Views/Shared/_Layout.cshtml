@@ -1,0 +1,186 @@
+﻿@using Microsoft.AspNetCore.Identity;
+
+@inject SignInManager<IdentityUser> signInManager;
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] GymApp </title>
+    
+    <link rel="stylesheet" href="~/css/HomePageStyles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/TrainersStyles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/BuyMembershipStyles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/TableStyles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/GymApp.styles.css" asp-append-version="true" />
+</head>
+<body>
+    
+   
+    
+    
+    <nav>
+        <ul>
+            <li>
+                <a href="#">Perfect Gym</a>
+            </li>
+            
+            @if(User.IsInRole("Admin"))
+            {
+                <li class="home-link">
+                    <a href="/Home/Index">Home</a>
+                </li>
+                <li class="admin-link">
+                    <a href="/Trainers/DisplayTrainers">Trainers</a>
+                </li>
+                <li class="admin-link">
+                    <a href="/Trainers/AddTrainers">Add Trainer</a>
+                </li>
+                <li class="admin-link">
+                    <a href="/Trainings/AddTrainings">Add Training</a>
+                </li>
+                <li class="admin-link">
+                    <a href="/Membership/AddMembership">Add Membership</a>
+                </li>
+                <li class="admin-link">
+                    <a href="/Reservation/DisplayReservations">User's Reservations</a>
+                </li>
+                <li class="admin-link">
+                    <a href="/Role/AssignRole">Assign Role</a>
+                </li>
+            }
+            @if(User.IsInRole("User"))
+            {
+                <li class="home-link">
+                    <a href="/Home/Index">Home</a>
+                </li>
+                <li class="user-link">
+                    <a href="/Trainers/DisplayTrainers">Trainers</a>
+                </li>
+
+                <li class="user-link">
+                    <a href="/Trainings/DisplayTrainings">Trainings</a>
+
+                </li>
+                <li class="user-link">
+                    <a href="/Reservation/DisplayUserReservations">My Trainings</a>
+                </li>
+
+                <li class="user-link">
+                    <a href="/Membership/DisplayMemberships">Buy Membership</a>
+                </li>
+            }
+          
+                
+                                                           
+                                      
+            @if(signInManager.IsSignedIn(User))
+            {
+                <li class="auth-link">
+                    <a href="/Auth/Logout">Logout</a>
+                </li>
+            }
+            else
+            {
+                <li class="guest-link">
+                    <a href="/Auth/Login">Login</a>
+                </li>
+
+                <li class="guest-link">
+                    <a href="/Auth/Register">Register</a>
+                </li>
+            }
+            <li class="menu-button" onclick="showSidebar()">
+                <a href="#"><svg class="icon" xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" /></svg></a>
+            </li>
+                       
+        </ul>
+
+        <ul class="sidebar">
+            <li onclick="hideSidebar()">
+                <a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" /></svg></a>
+            </li>
+            @if (User.IsInRole("Admin"))
+            {
+                <li>
+                    <a href="/Home/Index">Home</a>
+                </li>
+                <li>
+                    <a href="/Trainers/DisplayTrainers">Trainers</a>
+                </li>
+                <li>
+                    <a href="/Trainers/AddTrainers">Add Trainer</a>
+                </li>
+                <li>
+                    <a href="/Trainings/AddTrainings">Add Training</a>
+                </li>
+                <li>
+                    <a href="/Membership/AddMembership">Add Membership</a>
+                </li>
+                <li>
+                    <a href="/Reservation/DisplayReservations">User's Reservations</a>
+                </li>
+                <li>
+                    <a href="/Role/AssignRole">Assign Role</a>
+                </li>
+            }
+            @if (User.IsInRole("User"))
+            {
+                <li>
+                    <a href="/Home/Index">Home</a>
+                </li>
+                <li>
+                    <a href="/Trainers/DisplayTrainers">Trainers</a>
+                </li>
+
+                <li>
+                    <a href="/Trainings/DisplayTrainings">Trainings</a>
+
+                </li>
+                <li>
+                    <a href="/Reservation/DisplayUserReservations">My Trainings</a>
+                </li>
+
+                <li>
+                    <a href="/Membership/DisplayMemberships">Buy Membership</a>
+                </li>
+            }
+
+
+
+
+            @if (signInManager.IsSignedIn(User))
+            {
+                <li>
+                    <a href="/Auth/Logout">Logout</a>
+                </li>
+            }
+            else
+            {
+                <li>
+                    <a href="/Auth/Login">Login</a>
+                </li>
+
+                <li>
+                    <a href="/Auth/Register">Register</a>
+                </li>
+            }
+            
+        </ul>
+    </nav>
+
+   
+            @RenderBody()
+        
+    
+
+   
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+    
+</body>
+</html>
