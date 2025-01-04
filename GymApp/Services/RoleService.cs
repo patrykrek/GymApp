@@ -23,12 +23,12 @@ namespace GymApp.Services
 
             if (findUser == null)
             {
-                throw new ArgumentException($"User doesn't esxist");
+                throw new ArgumentException($"User doesn't exist");
             }
 
             var roleExists = await RoleExistsAsync(user.Roles);
 
-            if (roleExists != null || roleExists.Count == user.Roles.Length)
+            if (roleExists != null && roleExists.Count == user.Roles.Length)
             {
                 var assignRole = await _userManager.AddToRolesAsync(findUser, user.Roles);
             }

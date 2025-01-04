@@ -43,8 +43,8 @@ namespace GymApp.Services
             }
 
             var findUserMembership = await _umRepository.GetAllWithIncludeAsync(
-                predicate: u => u.userId == UserId,
-                includeProperties: u => u.User);
+                predicate: u => u.userId == UserId);
+                
 
             if (findUserMembership == null || !findUserMembership.Any())
             {
