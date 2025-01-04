@@ -51,13 +51,35 @@ namespace GymApp.Services
                 throw new ArgumentException($"User doesn't exist");
             }
 
-            var userMembership = new UserMembership
+            if(findMembership.Name == "Monthly")
             {
-                MembershipId = membershipId,
-                userId = userId
-            };
+                var userMembership = new UserMembership
+                {
+                    MembershipId = membershipId,
+                    userId = userId,
+                    StartDate = DateTime.Now,
+                    ExpireDate = DateTime.Now.AddDays(30)
 
-            await _usermembershipRepository.AddAsync(userMembership);
+
+                };
+                await _usermembershipRepository.AddAsync(userMembership);
+            }
+
+            if(findMembership.Name == "Yearly")
+            {
+                var userMembership = new UserMembership
+                {
+                    MembershipId = membershipId,
+                    userId = userId,
+                    StartDate = DateTime.Now,
+                    ExpireDate = DateTime.Now.AddDays(365)
+                };
+                await _usermembershipRepository.AddAsync(userMembership);
+            }
+
+           
+
+            
 
         }
 

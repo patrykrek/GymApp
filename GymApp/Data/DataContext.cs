@@ -55,6 +55,9 @@ namespace GymApp.Data
                 eb.HasOne(um => um.User)
                 .WithMany(u => u.UserMemberships)
                 .HasForeignKey(um => um.userId);
+
+                eb.Property(x => x.StartDate).HasColumnType("date");
+                eb.Property(x => x.ExpireDate).HasColumnType("date");
             });
         }
 
