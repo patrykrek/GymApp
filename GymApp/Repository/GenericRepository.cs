@@ -77,7 +77,9 @@ namespace GymApp.Repositories
         {
             return await _dbSet.AnyAsync(e => EF.Property<int>(e, "Id") == id);
         }
+
        
+
 
 
     }
