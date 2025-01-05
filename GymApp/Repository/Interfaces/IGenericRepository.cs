@@ -11,5 +11,6 @@ namespace GymApp.Repositories.Interfaces
         Task EditAsync(T entity);
         Task DeleteAsync(int id);
         Task<bool> ExistsAsync(int id);
+        
     }
 }

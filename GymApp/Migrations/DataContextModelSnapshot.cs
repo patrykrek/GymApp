@@ -138,8 +138,14 @@ namespace GymApp.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("ExpireDate")
+                        .HasColumnType("date");
+
                     b.Property<int>("MembershipId")
                         .HasColumnType("int");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("date");
 
                     b.Property<string>("userId")
                         .IsRequired()
