@@ -19,7 +19,10 @@
                 </th>
                 <th>
                     Training Date
-                </th>                                          
+                </th>   
+                <th>
+                    Actions
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -37,7 +40,18 @@
                     </td>
                     <td data-lable="Start Date">
                         @reservation.Training.StartDate
-                    </td>                                                        
+                    </td>  
+                    <td>
+                        <a asp-controller="Reservation"
+                           asp-action="DownloadPdf"
+                           asp-route-ReservationDate="@reservation.ReservationDate.ToString("o")"
+                           asp-route-Name="@reservation.Training.Name"
+                           asp-route-Description="@reservation.Training.Description"
+                           asp-route-StartDate="@reservation.Training.StartDate.ToString("o")"
+                           class="pdf-download">
+                           Download Pdf 
+                        </a>
+                    </td>
                 </tr>
             }
         </tbody>

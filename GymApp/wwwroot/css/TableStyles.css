@@ -1,4 +1,6 @@
-﻿.table-container {
+﻿
+
+.table-container {
     margin: 0 auto;
     margin-top: 20px;
     width: 100%;
@@ -87,6 +89,17 @@ td {
 .btn-edit:hover{
     background-color:lightblue;
 }
+
+.pdf-download{
+    color: lightblue;
+}
+
+.pdf-download:hover{
+    color:aliceblue;
+}
+
+
+
 
 @media(max-width: 550px){
     thead{

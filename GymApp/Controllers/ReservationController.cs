@@ -1,5 +1,8 @@
-﻿using GymApp.Commands.ReservCommands;
+﻿using GymApp.Commands.PdfGeneratorCommands;
+using GymApp.Commands.ReservCommands;
+using GymApp.DTO;
 using GymApp.Queries;
+using GymApp.Models;
 using GymApp.Repositories.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -48,5 +51,23 @@ namespace GymApp.Controllers
 
             return View(getReserv);
         } 
+
+        public async Task<IActionResult> DownloadPdf(DateTime ReservationDate, string Name, string Description, DateTime StartDate)
+        {
+            var reservation = new GetUsersReservationsDTO
+            {
+                ReservationDate = ReservationDate,
+                Training = new Training
+                {
+                    Name = Name,
+                    Description = Description,
+                    StartDate = StartDate
+                }
+            };
+
+            var pdfBytes = await _mediator.Send(new GeneratePdfCommand(reservation));
+
+            return File(pdfBytes, "application/pdf", "TrainingConfirmation.pdf");
+        }
     }
 }

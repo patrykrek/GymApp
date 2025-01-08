@@ -8,7 +8,7 @@
     <form asp-controller="Trainings" asp-action="EditTrainingsForm">
 
         <div class="input-box">
-            <input type="hidden" asp-for="Id"></input>
+            <input type="hidden" asp-for="Id">
         </div>
         <h1>Edit Training</h1>
 
@@ -16,7 +16,7 @@
 
             <p>Name</p>
 
-            <input type="text" placeholder="Name" asp-for="Name"></input>
+            <input type="text" placeholder="Name" asp-for="Name">
 
             <span class="text-danger" asp-validation-for="Name"></span>
 
@@ -26,7 +26,7 @@
 
             <p>Description</p>
 
-            <input type="text" placeholder="Description" asp-for="Description"></input>
+            <input type="text" placeholder="Description" asp-for="Description">
 
             <span class="text-danger" asp-validation-for="Description"></span>
         </div>
@@ -35,7 +35,7 @@
 
             <p>Date</p>
 
-            <input type="datetime-local" asp-for="StartDate"></input>
+            <input type="datetime-local" asp-for="StartDate">
 
             <span class="text-danger" asp-validation-for="StartDate"></span>
 
@@ -44,7 +44,7 @@
 
             <p>Duration(in minutes)</p>
 
-            <input type="number" placeholder="0" min="0" asp-for="Duration"></input>
+            <input type="number" placeholder="0" min="0" asp-for="Duration">
 
             <span class="text-danger" asp-validation-for="Duration"></span>
 
@@ -53,7 +53,7 @@
 
             <p>Trainer ID</p>
 
-            <input type="number" placeholder="0" min="0" asp-for="TrainerId"></input>
+            <input type="number" placeholder="0" min="0" asp-for="TrainerId">
 
             <span class="text-danger" asp-validation-for="TrainerId"></span>
 
