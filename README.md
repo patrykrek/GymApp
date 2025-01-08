@@ -11,6 +11,7 @@ Users can login and register, there are also role based authorization. Applicati
 - Display trainers and their trainings
 - Sign up for training
 - Users can see their training reservations
+- Users can download pdf file with their training reservation confirmation
 
 ### Admin Functions
 - Login and register
