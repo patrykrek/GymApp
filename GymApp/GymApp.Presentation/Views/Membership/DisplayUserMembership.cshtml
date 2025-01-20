@@ -1,0 +1,34 @@
+﻿@using GymApp.GymApp.Application.DTO
+@{
+    Layout = "_Layout";
+}
+
+@model GetUserMembershipDTO
+
+<h1 id="header">YOUR MEMBERSHIP</h1>
+
+<div class="buymembership-view">
+    
+
+    <div class="membership-card">
+
+        
+
+        <h1>@Model.Membership.Name Membership</h1>
+
+        <p>@Model.Membership.PricePerMonth zł per month</p>
+
+        <div class="benefits">
+
+            <ul>
+                <li>Unlimited access to the strength zone and fitness classes </li>
+                 <li>Access to sauna</li>
+                 <li>One training with trainer for free</li>
+            </ul>
+
+        </div>
+
+    </div>
+    
+</div>
+

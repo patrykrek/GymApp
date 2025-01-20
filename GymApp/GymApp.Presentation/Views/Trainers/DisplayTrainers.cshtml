@@ -1,0 +1,28 @@
+﻿@using GymApp.GymApp.Application.DTO
+@{
+    Layout = "_Layout";
+}
+
+@model List<GetTrainersDTO> 
+
+<div class="trainer-view">
+
+<div class="gallery">
+    @foreach (var trainer in Model)
+    {
+            <div class="gallery-img">
+                <img src="@trainer.PhotoPath" class="gallery-item">
+               
+                <div class="trainer-name">
+                    <a asp-controller="Trainers" asp-action="GetTrainerTrainings" asp-route-TrainerId="@trainer.Id">@($"{trainer.FirstName} {trainer.LastName}")</a>
+                    <p>@trainer.Bio</p>
+                    
+                </div>
+
+            </div>
+           
+    }
+   
+</div>
+
+</div>

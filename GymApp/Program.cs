@@ -1,19 +1,23 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
-using GymApp.Data;
-using GymApp.Repositories;
-using GymApp.Repositories.Interfaces;
-using GymApp.Services;
-using GymApp.Services.Interfaces;
-using GymApp.Validator.AuthValidation;
+using GymApp.GymApp.Application.Services;
+using GymApp.GymApp.Application.Services.Interfaces;
+using GymApp.GymApp.Domain.Interfaces;
+using GymApp.GymApp.Infrastructure.Data;
+using GymApp.GymApp.Infrastructure.Repository;
+using GymApp.GymApp.Presentation.Validator.AuthValidation;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
-
+builder.Services.AddControllersWithViews()
+    .AddRazorOptions(options =>
+    {
+        options.ViewLocationFormats.Add("/GymApp.Presentation/Views/{1}/{0}.cshtml");
+        options.ViewLocationFormats.Add("/GymApp.Presentation/Views/Shared/{0}.cshtml");
+    });
 builder.Services.AddDbContext<DataContext>(options =>
 {
     options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),

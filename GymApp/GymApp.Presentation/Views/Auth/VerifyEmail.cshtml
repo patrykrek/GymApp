@@ -1,0 +1,22 @@
+﻿@using GymApp.GymApp.Application.DTO
+@{
+    Layout = "_RegisterLayout";
+}
+
+@model VerifyEmailDTO
+
+<div class="container">
+    <form asp-controller="Auth" asp-action="VerifyEmail" method="post">
+        <h1>Verify Email</h1>
+        <div class="input-box">
+            <p>Email</p>
+
+            <input type="Email" placeholder="Email" asp-for="Email"></input>
+
+            <span class="text-danger" asp-validation-for="Email"></span>
+
+        </div>
+
+        <button class="btn" type="submit">Verify</button>
+    </form>
+</div>
