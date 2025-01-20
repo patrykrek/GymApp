@@ -1,9 +1,8 @@
 using AutoMapper;
-using GymApp.DTO;
-using GymApp.Models;
-using GymApp.Repositories;
-using GymApp.Repositories.Interfaces;
-using GymApp.Services;
+using GymApp.GymApp.Application.DTO;
+using GymApp.GymApp.Application.Services;
+using GymApp.GymApp.Domain.Interfaces;
+using GymApp.GymApp.Domain.Models;
 using Moq;
 using System.Linq.Expressions;
 using Xunit;

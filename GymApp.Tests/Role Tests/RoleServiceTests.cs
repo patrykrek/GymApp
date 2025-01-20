@@ -1,5 +1,5 @@
-﻿using GymApp.Models;
-using GymApp.Services;
+﻿using GymApp.GymApp.Application.Services;
+using GymApp.GymApp.Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using Moq;
 using System;

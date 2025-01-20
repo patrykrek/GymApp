@@ -1,7 +1,7 @@
-﻿using GymApp.DTO;
-using GymApp.Models;
-using GymApp.Models.ViewModels;
-using GymApp.Services;
+﻿
+using GymApp.GymApp.Application.DTO;
+using GymApp.GymApp.Application.Services;
+using GymApp.GymApp.Domain.Models.ViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
