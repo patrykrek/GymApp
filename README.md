@@ -2,7 +2,7 @@
 
 ## About Project
 I created an web application which allows users to manage their workouts and memberships.
-Users can login and register, there are also role based authorization. Application is responsive. 
+Users can login and register, there is also role based authorization. Application is responsive. 
 
 ### User Functions:
 - Login and register
