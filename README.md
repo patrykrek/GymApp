@@ -24,7 +24,7 @@ Users can login and register, there is also role based authorization. Applicatio
 - Delete trainings
 
 
-## Technology
+## Built With
 - **ASP.NET MVC (8.0)**
 - **Entity Framework**
 - **MySQL Server**
@@ -58,17 +58,20 @@ Users can login and register, there is also role based authorization. Applicatio
 
 ## How to run an app
 1. Clone repository:
-   ```bash
+  ```cmd
    git clone https://github.com/GymApp.git
+  ```
 2. Open the project in Microsoft Visual Studio  
 
 3. Configure the database connection in the appsettings.json file.
 
 4. Apply migrations to database
-   ```bash
+  ```cmd
    dotnet ef database update
+  ```
 
 5. Run the application
-   ```bash
+  ```cmd
    dotnet run
+  ```
 
