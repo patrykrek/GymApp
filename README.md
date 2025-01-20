@@ -33,7 +33,7 @@ Users can login and register, there are also role based authorization. Applicati
 - **AutoMapper**
 - **ASP.NET.Core Identity**
 - **MediatR with CQRS**
-- **Domain Driven Development**
+- **Domain Driven Design**
 - **Repository Pattern**
 - **XUnit**
 - **Moq for Unit Tests**
