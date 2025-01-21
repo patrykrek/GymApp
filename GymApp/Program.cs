@@ -55,14 +55,15 @@ builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
 
 builder.Services.AddAutoMapper(typeof(Program).Assembly);
 
-builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
-builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<ITrainerService, TrainerService>();
-builder.Services.AddScoped<ITrainingService, TrainingService>();
-builder.Services.AddScoped<IMembershipService, MembershipService>();
-builder.Services.AddScoped<IRoleService, RoleService>();
-builder.Services.AddScoped<IReservationService, ReservationService>();
-builder.Services.AddScoped<IPdfGeneratorService, PdfGeneratorService>();
+builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddTransient<IAuthService, AuthService>();
+builder.Services.AddTransient<ITrainerService, TrainerService>();
+builder.Services.AddTransient<ITrainingService, TrainingService>();
+builder.Services.AddTransient<IMembershipService, MembershipService>();
+builder.Services.AddTransient<IRoleService, RoleService>();
+builder.Services.AddTransient<IReservationService, ReservationService>();
+builder.Services.AddTransient<IPdfGeneratorService, PdfGeneratorService>();
+builder.Services.AddTransient<IEmailSender, EmailSender>();
 
 
 

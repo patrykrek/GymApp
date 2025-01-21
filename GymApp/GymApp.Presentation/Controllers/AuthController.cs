@@ -1,19 +1,23 @@
 ﻿using GymApp.GymApp.Application.Commands;
 using GymApp.GymApp.Application.Commands.AuthCommands;
 using GymApp.GymApp.Application.DTO;
+using GymApp.GymApp.Application.Services.Interfaces;
 using GymApp.GymApp.Domain.Models.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using IEmailSender = GymApp.GymApp.Application.Services.Interfaces.IEmailSender;
 
 namespace GymApp.GymApp.Presentation.Controllers
 {
     public class AuthController : Controller
     {
         private readonly IMediator _mediator;
+        private readonly IEmailSender _emailSender;
 
-        public AuthController(IMediator mediator)
+        public AuthController(IMediator mediator, IEmailSender emailSender)
         {
             _mediator = mediator;
+            _emailSender = emailSender;
         }
 
         public IActionResult Register()
@@ -36,7 +40,11 @@ namespace GymApp.GymApp.Presentation.Controllers
 
                 if (result.Success)
                 {
+                    await _emailSender.SendEmail(model.Email, "Register", "Thanks for creating your account");
+
                     return RedirectToAction("Login");
+
+                                    
                 }
                 else
                 {
