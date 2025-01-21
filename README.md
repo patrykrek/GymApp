@@ -2,7 +2,7 @@
 
 ## About Project
 I created an web application which allows users to manage their workouts and memberships.
-Users can login and register, there are also role based authorization. Application is responsive. 
+Users can login and register, there is also role based authorization. Application is responsive. 
 
 ### User Functions:
 - Login and register
@@ -24,7 +24,7 @@ Users can login and register, there are also role based authorization. Applicati
 - Delete trainings
 
 
-## Technology
+## Built With
 - **ASP.NET MVC (8.0)**
 - **Entity Framework**
 - **MySQL Server**
@@ -33,6 +33,7 @@ Users can login and register, there are also role based authorization. Applicati
 - **AutoMapper**
 - **ASP.NET.Core Identity**
 - **MediatR with CQRS**
+- **Domain Driven Design**
 - **Repository Pattern**
 - **XUnit**
 - **Moq for Unit Tests**
@@ -57,17 +58,20 @@ Users can login and register, there are also role based authorization. Applicati
 
 ## How to run an app
 1. Clone repository:
-   ```bash
+  ```cmd
    git clone https://github.com/GymApp.git
+  ```
 2. Open the project in Microsoft Visual Studio  
 
 3. Configure the database connection in the appsettings.json file.
 
 4. Apply migrations to database
-   ```bash
+  ```cmd
    dotnet ef database update
+  ```
 
 5. Run the application
-   ```bash
+  ```cmd
    dotnet run
+  ```
 
