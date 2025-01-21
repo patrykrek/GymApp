@@ -3,7 +3,11 @@
 ## About Project
 I created an web application which allows users to manage their workouts and memberships.
 Users can login and register, there is also role based authorization. Every user will receive an email after registering to the app.
+Currently, email sending  works only on Gmail accounts.
 Application is responsive.
+
+## Status
+I'm currently working on 2 factor authentication. When user wants to login, he will receive an email with a code which he has to write in a special place to confirm his identity
 
 ### User Functions:
 - Login and register
@@ -75,4 +79,6 @@ Application is responsive.
   ```cmd
    dotnet run
   ```
+## Author
+Patryk Rekiel
 
