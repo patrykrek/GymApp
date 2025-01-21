@@ -46,8 +46,8 @@ Application is responsive.
 
 ## Some screenshots from application
 ![screen1](https://github.com/user-attachments/assets/98fe27b1-b545-4820-ab6c-2e5f9f6359fd)
-![screen2](https://github.com/user-attachments/assets/a6059ec2-5af5-437e-a885-bc1f98421e9e)
 ![login](https://github.com/user-attachments/assets/5602fdab-5681-48d3-8157-654f6accbfaf)
+![screen3](https://github.com/user-attachments/assets/75ce60ad-c014-45e6-aca7-fdf90b80c578)
 ![screen4](https://github.com/user-attachments/assets/9932ed03-b034-44b3-bcff-775aed6b6fae)
 ![screen5](https://github.com/user-attachments/assets/5b46d5ca-a45b-4920-b42c-17fe727cca4a)
 
