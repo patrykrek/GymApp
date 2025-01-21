@@ -21,13 +21,13 @@ h1{
     color: white;
 }
 
-.container{
+.container {
     border: 2px solid black;
     border-radius: 10px;
-    box-shadow: 0 0 15px grey;  
+    box-shadow: 0 0 15px grey;
     width: 540px;
     padding: 40px 50px;
-    
+    background-color: rgb(46, 45, 43);
 }
 
 .input-box{
@@ -47,7 +47,7 @@ h1{
     font-size: 30px;
     color: white;
     outline: none;
-    border: 2px solid black;
+    border: 2px solid white;
     padding: 10px;
   
 }
@@ -79,6 +79,10 @@ h1{
 .back-home{
     text-align: center;
     font-size: 20px;
+}
+
+.have-account p{
+    color: white;
 }
 
 .have-account a {
