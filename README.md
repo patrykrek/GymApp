@@ -2,12 +2,14 @@
 
 ## About Project
 I created an web application which allows users to manage their workouts and memberships.
-Users can login and register, there is also role based authorization. Every user will receive an email after registering to the app.
+Users can login and register, there is also role based authorization. Every user will receive an email after registering to the app. 
+I also added 2 factor authentication, every user that want to login will receive an email which contains a 6 digits code.
+User has to copy the code an paste it to login.
 Currently, email sending  works only on Gmail accounts.
 Application is responsive.
 
 ## Status
-I'm currently working on 2 factor authentication. When user wants to login, he will receive an email with a code which he has to write in a special place to confirm his identity
+Application is finished
 
 ### User Functions:
 - Login and register
@@ -17,6 +19,7 @@ I'm currently working on 2 factor authentication. When user wants to login, he w
 - Sign up for training
 - Users can see their training reservations
 - Users can download pdf file with their training reservation confirmation
+
 
 ### Admin Functions
 - Login and register
