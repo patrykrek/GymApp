@@ -2,7 +2,12 @@
 
 ## About Project
 I created an web application which allows users to manage their workouts and memberships.
-Users can login and register, there is also role based authorization. Application is responsive. 
+Users can login and register, there is also role based authorization. Every user will receive an email after registering to the app.
+Currently, email sending  works only on Gmail accounts.
+Application is responsive.
+
+## Status
+I'm currently working on 2 factor authentication. When user wants to login, he will receive an email with a code which he has to write in a special place to confirm his identity
 
 ### User Functions:
 - Login and register
@@ -45,8 +50,8 @@ Users can login and register, there is also role based authorization. Applicatio
 
 ## Some screenshots from application
 ![screen1](https://github.com/user-attachments/assets/98fe27b1-b545-4820-ab6c-2e5f9f6359fd)
-![screen2](https://github.com/user-attachments/assets/a6059ec2-5af5-437e-a885-bc1f98421e9e)
-![screen3](https://github.com/user-attachments/assets/15906cd7-cf64-4f6a-be73-0bee9fac7cab)
+![login](https://github.com/user-attachments/assets/5602fdab-5681-48d3-8157-654f6accbfaf)
+![screen3](https://github.com/user-attachments/assets/75ce60ad-c014-45e6-aca7-fdf90b80c578)
 ![screen4](https://github.com/user-attachments/assets/9932ed03-b034-44b3-bcff-775aed6b6fae)
 ![screen5](https://github.com/user-attachments/assets/5b46d5ca-a45b-4920-b42c-17fe727cca4a)
 
@@ -74,4 +79,6 @@ Users can login and register, there is also role based authorization. Applicatio
   ```cmd
    dotnet run
   ```
+## Author
+Patryk Rekiel
 
