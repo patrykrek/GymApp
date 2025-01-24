@@ -11,10 +11,15 @@ namespace GymApp.GymApp.Application.Services
     {
         private readonly SignInManager<IdentityUser> _signInManager;
         private readonly UserManager<IdentityUser> _userManager;
-        public AuthService(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager)
+        private readonly IOneTimeCodeService _oneTimeCodeService;
+        private readonly IEmailSender _emailSender;
+        public AuthService(SignInManager<IdentityUser> signInManager, UserManager<IdentityUser> userManager, IOneTimeCodeService oneTimeCodeService,
+            IEmailSender emailSender)
         {
             _signInManager = signInManager;
             _userManager = userManager;
+            _oneTimeCodeService = oneTimeCodeService;
+            _emailSender = emailSender;
         }
         public async Task<Result> Register(RegisterViewModel register)
         {
@@ -48,6 +53,17 @@ namespace GymApp.GymApp.Application.Services
 
             if (result.Succeeded)
             {
+                var user = await _userManager.FindByEmailAsync(login.Email);
+
+                if (user == null)
+                {
+                    return new Result { Success = false };
+                }
+
+                var code = await _oneTimeCodeService.GenerateAndSaveCode(user.Id);
+
+                await _emailSender.SendEmail(login.Email, "Login Code", $"{code}");
+
                 return new Result { Success = true };
             }
             else
@@ -89,5 +105,7 @@ namespace GymApp.GymApp.Application.Services
 
             return new Result { Success = true };
         }
+
+       
     }
 }

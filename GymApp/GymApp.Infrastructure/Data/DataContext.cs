@@ -59,6 +59,13 @@ namespace GymApp.GymApp.Infrastructure.Data
                 eb.Property(x => x.StartDate).HasColumnType("date");
                 eb.Property(x => x.ExpireDate).HasColumnType("date");
             });
+
+            builder.Entity<OneTimeCode>(eb =>
+            {
+                eb.HasOne(otc => otc.User)
+                .WithMany(u => u.OneTimeCodes)
+                .HasForeignKey(otc => otc.UserId);
+            });
         }
 
 

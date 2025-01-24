@@ -21,6 +21,11 @@ namespace GymApp.GymApp.Infrastructure.Repository
             return await _dbSet.ToListAsync();
         }
 
+        public async Task<T?> GetSingleAsync(Expression<Func<T, bool>> predicate)
+        {
+            return await _context.Set<T>().FirstOrDefaultAsync(predicate);
+        }
+
         public async Task<T> GetByIdAsync(int id)
         {
             return await _dbSet.FindAsync(id);

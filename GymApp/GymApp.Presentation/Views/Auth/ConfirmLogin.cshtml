@@ -1,0 +1,22 @@
+﻿@using GymApp.GymApp.Domain.Models.ViewModels
+
+@{
+    Layout = "_RegisterLayout";
+}
+
+@model ConfirmLoginViewModel
+<div class="container">
+    <form asp-controller="Auth" asp-action="ConfirmLogin" method="post">
+        <h1>Confirm Login</h1>
+        <div class="input-box">
+            <p>Code</p>
+
+            <input type="number" placeholder="Code" asp-for="Code"></input>
+
+            <span class="text-danger" asp-validation-for="Code"></span>
+
+        </div>
+
+        <button class="btn" type="submit">Verify</button>
+    </form>
+</div>

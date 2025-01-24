@@ -11,6 +11,7 @@ namespace GymApp.GymApp.Domain.Interfaces
             params Expression<Func<T, object>>[] includeProperties);
 
         Task<IEnumerable<T>> GetAllAsync();
+        Task<T?> GetSingleAsync(Expression<Func<T, bool>> predicate);
 
         Task AddAsync(T entity);
 

@@ -5,6 +5,7 @@ using GymApp.GymApp.Application.Services.Interfaces;
 using GymApp.GymApp.Domain.Models.ViewModels;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 using IEmailSender = GymApp.GymApp.Application.Services.Interfaces.IEmailSender;
 
 namespace GymApp.GymApp.Presentation.Controllers
@@ -13,6 +14,7 @@ namespace GymApp.GymApp.Presentation.Controllers
     {
         private readonly IMediator _mediator;
         private readonly IEmailSender _emailSender;
+
 
         public AuthController(IMediator mediator, IEmailSender emailSender)
         {
@@ -63,7 +65,7 @@ namespace GymApp.GymApp.Presentation.Controllers
 
                 if (result.Success)
                 {
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("ConfirmLogin");
                 }
                 else
                 {
@@ -73,7 +75,31 @@ namespace GymApp.GymApp.Presentation.Controllers
             return View(model);
         }
 
+        [HttpGet]
+        public IActionResult ConfirmLogin()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public async Task<IActionResult> ConfirmLogin(ConfirmLoginViewModel model)
+        {
+            var user = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            if (!ModelState.IsValid)
+            {
+                return View("ConfirmLogin", model);
+            }
+
+            var result = await _mediator.Send(new VerifyCodeCommand(user, model.Code));
+
+            if(result == false)
+            {
+                return RedirectToAction("ConfirmLogin");
+            }
+
+            return RedirectToAction("Index", "Home");
+        }
 
         [HttpGet]
         public IActionResult VerifyEmail()

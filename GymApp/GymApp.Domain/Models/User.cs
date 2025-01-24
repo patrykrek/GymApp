@@ -7,5 +7,6 @@ namespace GymApp.GymApp.Domain.Models
     {
         public ICollection<Reservation> Reservations { get; set; }
         public ICollection<UserMembership> UserMemberships { get; set; }
+        public ICollection<OneTimeCode> OneTimeCodes { get; set; }
     }
 }

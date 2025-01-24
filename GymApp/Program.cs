@@ -63,7 +63,9 @@ builder.Services.AddTransient<IMembershipService, MembershipService>();
 builder.Services.AddTransient<IRoleService, RoleService>();
 builder.Services.AddTransient<IReservationService, ReservationService>();
 builder.Services.AddTransient<IPdfGeneratorService, PdfGeneratorService>();
+builder.Services.AddTransient<IOneTimeCodeService, OneTimeCodeService>();
 builder.Services.AddTransient<IEmailSender, EmailSender>();
+
 
 
 
